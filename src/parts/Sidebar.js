@@ -59,6 +59,7 @@ function Sidebar({ match, history }) {
                   <img
                     className="object-cover w-24 h-24"
                     src={USERS?.avatar}
+                    alt="etnipro"
                   />
                 ) : (
                   <DefaultUser className="w-24 h-24 fill-indigo-500"></DefaultUser>
