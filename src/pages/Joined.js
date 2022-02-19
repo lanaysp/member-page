@@ -23,7 +23,7 @@ export default function Joined({ match }) {
       else setstate({ isLoading: false, isError: false, data: details });
     } catch (error) {
       if (error?.response?.data?.message === "user already take this course")
-        push(`/courses/${match.params.class}`);
+        alert('error')
     }
   }, [match.params.class]);
 
