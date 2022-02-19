@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import { Link } from "react-router-dom";
+
 import courses from "constants/api/courses";
 
 import ServerError from "pages/500";
@@ -43,12 +45,12 @@ export default function Joined({ history, match }) {
         You have successfully joined our{" "}
         <strong>{state?.data?.name ?? "Class Name"}</strong> class
       </p>
-      {/* <Link
+      <Link
         className="px-6 py-3 mt-5 text-white transition-all duration-200 bg-orange-500 shadow-inner cursor-pointer hover:bg-orange-400 focus:outline-none"
         to={`/courses/${match.params.class}`}
       >
         Start learn
-      </Link> */}
+      </Link>
     </section>
   );
 }
