@@ -14,18 +14,18 @@ export default function Joined({ history, match }) {
     data: {},
   }));
 
-  // const joining = React.useCallback(async () => {
-  //   try {
-  //     const details = await courses.details(match.params.class);
+  const joining = React.useCallback(async () => {
+    try {
+      const details = await courses.details(match.params.class);
 
-  //     const joined = await courses.join(match.params.class);
-  //     if (joined.data.snap_url) window.location.href = joined.data.snap_url;
-  //     else setstate({ isLoading: false, isError: false, data: details });
-  //   } catch (error) {
-  //     if (error?.response?.data?.message === "user already take this course")
-  //       history.push(`/courses/${match.params.class}`);
-  //   }
-  // }, [match.params.class]);
+      const joined = await courses.join(match.params.class);
+      if (joined.data.snap_url) window.location.href = joined.data.snap_url;
+      else setstate({ isLoading: false, isError: false, data: details });
+    } catch (error) {
+      if (error?.response?.data?.message === "user already take this course")
+        history.push(`/courses/${match.params.class}`);
+    }
+  }, [match.params.class]);
 
   useEffect(() => {
     joining();
